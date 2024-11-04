@@ -1,6 +1,6 @@
 -- ------------------------------------------------------------------------------------
 
-USE v_art;
+USE v_art
 
 -- ------------------------------------------------------------------------------------
 -- 1. The manager wants to add the artist Gustav Klimt as an artist in the database.
@@ -9,7 +9,7 @@ USE v_art;
 --    Write the insert statement that would add the artist to the system. 
 --    (Hint: Assign the artist a primary key that is next in sequence for the table)
 -- ------------------------------------------------------------------------------------
-
+INSERT INTO artist 'artist_id'
 
 -- ------------------------------------------------------------------------------------
 -- 2. The manager wants to list all the artists sorted by the last name of the artist.
@@ -194,6 +194,10 @@ USE bike;
 -- | Marni      | Bolton    | (717) 670-6268 | 7469 Plymouth Ave.  | Lancaster | NY    | 14086    |
 -- | Trisha     | Johnson   | (717) 126-8787 | 59 Wild Horse St.   | Lancaster | NY    | 14086    |
 -- +------------+-----------+----------------+---------------------+-----------+-------+----------+
+SELECT first_name, last_name, phone, street, city, state, zip_code
+FROM customer
+WHERE phone IS NOT NULL AND (city LIKE '%los%' OR city LIKE '%lan%') OR last_name = 'Armstrong'
+LIMIT 5;
 
 -- ------------------------------------------------------------------------------------------
 
