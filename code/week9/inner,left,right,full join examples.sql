@@ -38,7 +38,9 @@ FROM artist a
 CROSS JOIN artwork aw;
 
 -- INNER JOIN
-SELECT fname, lname, title
+SELECT a.fname AS 'First Name'
+,      a.lname AS 'Last Name'
+,      aw.tittle AS 'Title'
 FROM artist a
 INNER JOIN artwork aw
 ON a.artist_id = aw.artist_id;
